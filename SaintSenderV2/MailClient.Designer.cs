@@ -48,7 +48,7 @@
             this.Tb_UserName.Name = "Tb_UserName";
             this.Tb_UserName.Size = new System.Drawing.Size(232, 22);
             this.Tb_UserName.TabIndex = 0;
-            this.Tb_UserName.TextChanged += new System.EventHandler(this.cbCredentials_TextChanged);
+            this.Tb_UserName.TextChanged += new System.EventHandler(this.tbCredentials_TextChanged);
             // 
             // Tb_Password
             // 
@@ -57,7 +57,7 @@
             this.Tb_Password.Size = new System.Drawing.Size(286, 22);
             this.Tb_Password.TabIndex = 1;
             this.Tb_Password.UseSystemPasswordChar = true;
-            this.Tb_Password.TextChanged += new System.EventHandler(this.cbCredentials_TextChanged);
+            this.Tb_Password.TextChanged += new System.EventHandler(this.tbCredentials_TextChanged);
             // 
             // btnGetMessages
             // 
@@ -168,6 +168,7 @@
             this.Controls.Add(this.Tb_UserName);
             this.Name = "MailClient";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.MailClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

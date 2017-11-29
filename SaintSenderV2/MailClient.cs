@@ -41,6 +41,14 @@ namespace SaintSenderV2
             
         }
 
+        private void MailClient_Load(object sender, EventArgs e)
+        {
+            Timer timer = new Timer();
+            timer.Interval = 300000;
+            timer.Tick += new EventHandler(btnGetMessages_Click);
+            timer.Start();
+        }
+
         private void btnGetMessages_Click(object sender, EventArgs e)
         {
             listMails.Items.Clear();
@@ -93,7 +101,7 @@ namespace SaintSenderV2
             }
         }
 
-        private void cbCredentials_TextChanged(object sender, EventArgs e)
+        private void tbCredentials_TextChanged(object sender, EventArgs e)
         {
             cbRememberMe.Checked = false;
         }
