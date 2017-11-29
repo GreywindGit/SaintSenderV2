@@ -22,26 +22,33 @@ namespace SaintSenderV2
             }
         }
 
-        public IEnumerable<MailMessage> GetUnseenMessages(String email, String password, string filterOption = "")
+        public IEnumerable<MailMessage> GetMessages(String email, String password, string filterOption = "")
         {
-            using (ImapClient client = new ImapClient(hostname, 993, email, password, AuthMethod.Login, true))
+            try
             {
-                SearchCondition searchCondition;
-                switch (filterOption)
+                using (ImapClient client = new ImapClient(hostname, 993, email, password, AuthMethod.Login, true))
                 {
-                    case "Unread":
-                        searchCondition = SearchCondition.Unseen();
-                        break;
-                    default:
-                        searchCondition = SearchCondition.All();
-                        break;
-                }
-                // Returns a collection of identifiers of all mails matching the specified search criteria.
-                IEnumerable<uint> uids = client.Search(searchCondition);
-                // Download mail messages from the default mailbox.
-                IEnumerable<MailMessage> messages = client.GetMessages(uids);
+                    SearchCondition searchCondition;
+                    switch (filterOption)
+                    {
+                        case "Unread":
+                            searchCondition = SearchCondition.Unseen();
+                            break;
+                        default:
+                            searchCondition = SearchCondition.All();
+                            break;
+                    }
+                    // Returns a collection of identifiers of all mails matching the specified search criteria.
+                    IEnumerable<uint> uids = client.Search(searchCondition);
+                    // Download mail messages from the default mailbox.
+                    IEnumerable<MailMessage> messages = client.GetMessages(uids);
 
-                return messages;
+                    return messages;
+                }
+            }
+            catch (InvalidCredentialsException)
+            {
+                return null;
             }
         }
 

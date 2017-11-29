@@ -30,7 +30,6 @@
         {
             this.Tb_UserName = new System.Windows.Forms.TextBox();
             this.Tb_Password = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
             this.btnGetMessages = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,26 +48,16 @@
             this.Tb_UserName.Name = "Tb_UserName";
             this.Tb_UserName.Size = new System.Drawing.Size(232, 22);
             this.Tb_UserName.TabIndex = 0;
-            this.Tb_UserName.Text = "earthsongflower@gmail.com";
+            this.Tb_UserName.TextChanged += new System.EventHandler(this.cbCredentials_TextChanged);
             // 
             // Tb_Password
             // 
-            this.Tb_Password.Location = new System.Drawing.Point(394, 10);
+            this.Tb_Password.Location = new System.Drawing.Point(426, 10);
             this.Tb_Password.Name = "Tb_Password";
-            this.Tb_Password.Size = new System.Drawing.Size(232, 22);
+            this.Tb_Password.Size = new System.Drawing.Size(286, 22);
             this.Tb_Password.TabIndex = 1;
-            this.Tb_Password.Text = "swuser73";
             this.Tb_Password.UseSystemPasswordChar = true;
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.Location = new System.Drawing.Point(1126, 46);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(87, 32);
-            this.btnLogin.TabIndex = 2;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.Tb_Password.TextChanged += new System.EventHandler(this.cbCredentials_TextChanged);
             // 
             // btnGetMessages
             // 
@@ -94,9 +83,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(342, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 17);
+            this.label2.Size = new System.Drawing.Size(69, 17);
             this.label2.TabIndex = 6;
-            this.label2.Text = "label2";
+            this.label2.Text = "Password";
             // 
             // cbRememberMe
             // 
@@ -107,6 +96,7 @@
             this.cbRememberMe.TabIndex = 7;
             this.cbRememberMe.Text = "Remember me";
             this.cbRememberMe.UseVisualStyleBackColor = true;
+            this.cbRememberMe.CheckedChanged += new System.EventHandler(this.cbRememberMe_CheckedChanged);
             // 
             // cbMailOptions
             // 
@@ -138,12 +128,13 @@
             this.colDate});
             this.listMails.FullRowSelect = true;
             this.listMails.GridLines = true;
-            this.listMails.Location = new System.Drawing.Point(13, 84);
+            this.listMails.Location = new System.Drawing.Point(13, 51);
             this.listMails.Name = "listMails";
-            this.listMails.Size = new System.Drawing.Size(1200, 426);
+            this.listMails.Size = new System.Drawing.Size(1200, 459);
             this.listMails.TabIndex = 10;
             this.listMails.UseCompatibleStateImageBehavior = false;
             this.listMails.View = System.Windows.Forms.View.Details;
+            this.listMails.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listMails_ColumnClick);
             this.listMails.ItemActivate += new System.EventHandler(this.listMails_ItemActivate);
             // 
             // colFrom
@@ -173,7 +164,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGetMessages);
-            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.Tb_Password);
             this.Controls.Add(this.Tb_UserName);
             this.Name = "MailClient";
@@ -187,7 +177,6 @@
 
         private System.Windows.Forms.TextBox Tb_UserName;
         private System.Windows.Forms.TextBox Tb_Password;
-        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnGetMessages;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
