@@ -34,6 +34,12 @@ namespace SaintSenderV2
                         case "Unread":
                             searchCondition = SearchCondition.Unseen();
                             break;
+                        case "New":
+                            searchCondition = SearchCondition.New();
+                            break;
+                        case "Unanswered":
+                            searchCondition = SearchCondition.Unanswered();
+                            break;
                         default:
                             searchCondition = SearchCondition.All();
                             break;
