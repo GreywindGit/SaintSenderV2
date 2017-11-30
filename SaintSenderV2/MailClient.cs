@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SaintSenderV2
@@ -73,7 +67,7 @@ namespace SaintSenderV2
         {
             ListViewItem realSender = ((ListView)sender).SelectedItems[0];
             MailMessage message = (MailMessage)realSender.Tag;
-            Form mailContent = new MailContent(message);
+            Form mailContent = new ReadMail(message);
             mailContent.Show();
         }
 
@@ -90,6 +84,8 @@ namespace SaintSenderV2
                             writer.WriteLine(item);
                         }
                     }
+                Tb_UserName.ReadOnly = true;
+                Tb_Password.ReadOnly = true;
  
             }
             else
@@ -98,12 +94,9 @@ namespace SaintSenderV2
                 {
                     File.Delete("userdata.txt");
                 }
+                Tb_UserName.ReadOnly = false;
+                Tb_Password.ReadOnly = false;
             }
-        }
-
-        private void tbCredentials_TextChanged(object sender, EventArgs e)
-        {
-            cbRememberMe.Checked = false;
         }
 
         private void listMails_ColumnClick(object sender, ColumnClickEventArgs e)

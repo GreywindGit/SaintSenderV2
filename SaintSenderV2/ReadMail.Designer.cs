@@ -1,6 +1,6 @@
 ﻿namespace SaintSenderV2
 {
-    partial class MailContent
+    partial class ReadMail
     {
         /// <summary>
         /// Required designer variable.

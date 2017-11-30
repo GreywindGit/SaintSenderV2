@@ -11,9 +11,9 @@ using System.Net.Mail;
 
 namespace SaintSenderV2
 {
-    public partial class MailContent : Form
+    public partial class ReadMail : Form
     {
-        public MailContent(MailMessage message)
+        public ReadMail(MailMessage message)
         {
             InitializeComponent();
             rtbMailContent.Text = message.Body;

@@ -60,11 +60,11 @@
     <Compile Include="MailClient.Designer.cs">
       <DependentUpon>MailClient.cs</DependentUpon>
     </Compile>
-    <Compile Include="MailContent.cs">
+    <Compile Include="ReadMail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MailContent.Designer.cs">
-      <DependentUpon>MailContent.cs</DependentUpon>
+    <Compile Include="ReadMail.Designer.cs">
+      <DependentUpon>ReadMail.cs</DependentUpon>
     </Compile>
     <Compile Include="MailHelper.cs" />
     <Compile Include="Program.cs" />
@@ -75,8 +75,8 @@
     <EmbeddedResource Include="MailClient.resx">
       <DependentUpon>MailClient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MailContent.resx">
-      <DependentUpon>MailContent.cs</DependentUpon>
+    <EmbeddedResource Include="ReadMail.resx">
+      <DependentUpon>ReadMail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
