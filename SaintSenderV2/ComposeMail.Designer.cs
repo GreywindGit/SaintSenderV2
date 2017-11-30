@@ -65,27 +65,27 @@
             this.labelDeliverTo.AutoSize = true;
             this.labelDeliverTo.Location = new System.Drawing.Point(16, 12);
             this.labelDeliverTo.Name = "labelDeliverTo";
-            this.labelDeliverTo.Size = new System.Drawing.Size(25, 17);
+            this.labelDeliverTo.Size = new System.Drawing.Size(29, 17);
             this.labelDeliverTo.TabIndex = 3;
-            this.labelDeliverTo.Text = "To";
+            this.labelDeliverTo.Text = "To:";
             // 
             // labelSubject
             // 
             this.labelSubject.AutoSize = true;
             this.labelSubject.Location = new System.Drawing.Point(16, 58);
             this.labelSubject.Name = "labelSubject";
-            this.labelSubject.Size = new System.Drawing.Size(55, 17);
+            this.labelSubject.Size = new System.Drawing.Size(59, 17);
             this.labelSubject.TabIndex = 4;
-            this.labelSubject.Text = "Subject";
+            this.labelSubject.Text = "Subject:";
             // 
             // labelMessage
             // 
             this.labelMessage.AutoSize = true;
             this.labelMessage.Location = new System.Drawing.Point(16, 101);
             this.labelMessage.Name = "labelMessage";
-            this.labelMessage.Size = new System.Drawing.Size(65, 17);
+            this.labelMessage.Size = new System.Drawing.Size(69, 17);
             this.labelMessage.TabIndex = 5;
-            this.labelMessage.Text = "Message";
+            this.labelMessage.Text = "Message:";
             // 
             // btnSend
             // 

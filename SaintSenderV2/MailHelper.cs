@@ -12,14 +12,6 @@ namespace SaintSenderV2
     {
         string hostname = "imap.gmail.com";
 
-        public String LoginCheck(String email, String password)
-        {
-            using (ImapClient client = new ImapClient(hostname, 993, email, password, AuthMethod.Login, true))
-            {
-                return("We are connected!");
-            }
-        }
-
         public IEnumerable<MailMessage> GetMessages(String email, String password, string filterOption = "")
         {
             try
@@ -57,10 +49,10 @@ namespace SaintSenderV2
         }
 
 
-        public void SendMessage(string sender, string username, string password, string deliverto, string subject, string message)
+        public void SendMessage(string username, string password, string deliverto, string subject, string message)
         {
             MailMessage mail = new MailMessage();
-            mail.From = new MailAddress(sender);
+            mail.From = new MailAddress(username);
             mail.To.Add(new MailAddress(deliverto));
             mail.Subject = subject;
             mail.Body = message;

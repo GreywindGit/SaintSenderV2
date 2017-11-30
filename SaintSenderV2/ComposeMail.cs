@@ -25,7 +25,7 @@ namespace SaintSenderV2
         private void btnSend_Click(object sender, EventArgs e)
         {
             MailHelper mailHelper = new MailHelper();
-            mailHelper.SendMessage(username, username, password, tbDeliverTo.Text, tbSubject.Text, rtbMessage.Text);
+            mailHelper.SendMessage(username, password, tbDeliverTo.Text, tbSubject.Text, rtbMessage.Text);
             this.BackColor = Color.SpringGreen;
             this.Close();
         }
