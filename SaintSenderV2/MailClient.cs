@@ -45,7 +45,6 @@ namespace SaintSenderV2
 
         private void btnGetMessages_Click(object sender, EventArgs e)
         {
-            listMails.Items.Clear();
             MailHelper mailHelper = new MailHelper();
             string mailOption = cbMailOptions.SelectedItem as string;
             IEnumerable<MailMessage> messages = mailHelper.GetMessages(Tb_UserName.Text, Tb_Password.Text, mailOption);
@@ -55,12 +54,7 @@ namespace SaintSenderV2
                 MessageBox.Show("Invalid login data. Please fill e-mail and password and try again.");
                 return;
             }
-            foreach (MailMessage message in messages)
-            {
-                ListViewItem mailItem = new ListViewItem(new[] { message.From.ToString(), message.Subject, message.Headers["Date"] });
-                mailItem.Tag = message;
-                listMails.Items.Add(mailItem);
-            }
+            DisplayMessages(messages);
         }
 
         private void listMails_ItemActivate(object sender, EventArgs e)
@@ -125,6 +119,32 @@ namespace SaintSenderV2
             else
             {
                 MessageBox.Show("Please enter your e-mail address and password to send mails.");
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            List<MailMessage> searchResult = new List<MailMessage>();
+            foreach (ListViewItem item in listMails.Items)
+            {
+                MailMessage message = item.Tag as MailMessage;
+                if (message.Subject.Contains(tbSearch.Text) || message.Body.Contains(tbSearch.Text) || message.From.ToString().Contains(tbSearch.Text))
+                {
+                    if (!searchResult.Contains(message))
+                    searchResult.Add(message);
+                }
+            }
+            DisplayMessages(searchResult);
+        }
+
+        private void DisplayMessages(IEnumerable<MailMessage> messages)
+        {
+            listMails.Items.Clear();
+            foreach (MailMessage message in messages)
+            {
+                ListViewItem mailItem = new ListViewItem(new[] { message.From.ToString(), message.Subject, message.Headers["Date"] });
+                mailItem.Tag = message;
+                listMails.Items.Add(mailItem);
             }
         }
     }

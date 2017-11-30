@@ -41,6 +41,8 @@
             this.colSubject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnCompose = new System.Windows.Forms.Button();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Tb_UserName
@@ -161,11 +163,30 @@
             this.btnCompose.UseVisualStyleBackColor = true;
             this.btnCompose.Click += new System.EventHandler(this.btnCompose_Click);
             // 
+            // tbSearch
+            // 
+            this.tbSearch.Location = new System.Drawing.Point(441, 531);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(609, 22);
+            this.tbSearch.TabIndex = 12;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(1065, 528);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(148, 32);
+            this.btnSearch.TabIndex = 13;
+            this.btnSearch.Text = "Search in messages";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // MailClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1259, 572);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.tbSearch);
             this.Controls.Add(this.btnCompose);
             this.Controls.Add(this.listMails);
             this.Controls.Add(this.label3);
@@ -199,6 +220,8 @@
         private System.Windows.Forms.ColumnHeader colSubject;
         private System.Windows.Forms.ColumnHeader colDate;
         private System.Windows.Forms.Button btnCompose;
+        private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.Button btnSearch;
     }
 }
 
