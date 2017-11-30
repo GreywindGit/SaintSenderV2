@@ -1,10 +1,8 @@
 ﻿using S22.Imap;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
+using System.Net;
 
 //http://smiley22.github.io/S22.Imap/Documentation/
 
@@ -59,6 +57,20 @@ namespace SaintSenderV2
         }
 
 
+        public void SendMessage(string sender, string username, string password, string deliverto, string subject, string message)
+        {
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress(sender);
+            mail.To.Add(new MailAddress(deliverto));
+            mail.Subject = subject;
+            mail.Body = message;
 
+            SmtpClient smtpClient = new SmtpClient();
+            smtpClient.Host = "smtp.gmail.com";
+            smtpClient.Credentials = new NetworkCredential(username, password);
+            smtpClient.EnableSsl = true;
+            smtpClient.Send(mail);
+            
+        }
     }
 }

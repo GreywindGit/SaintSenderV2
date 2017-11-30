@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComposeMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComposeMail.Designer.cs">
+      <DependentUpon>ComposeMail.cs</DependentUpon>
+    </Compile>
     <Compile Include="MailClient.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     <Compile Include="MailHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ComposeMail.resx">
+      <DependentUpon>ComposeMail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MailClient.resx">
       <DependentUpon>MailClient.cs</DependentUpon>
     </EmbeddedResource>

@@ -40,6 +40,7 @@
             this.colFrom = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colSubject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnCompose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Tb_UserName
@@ -61,7 +62,7 @@
             // 
             // btnGetMessages
             // 
-            this.btnGetMessages.Location = new System.Drawing.Point(591, 528);
+            this.btnGetMessages.Location = new System.Drawing.Point(305, 528);
             this.btnGetMessages.Name = "btnGetMessages";
             this.btnGetMessages.Size = new System.Drawing.Size(121, 32);
             this.btnGetMessages.TabIndex = 4;
@@ -90,7 +91,7 @@
             // cbRememberMe
             // 
             this.cbRememberMe.AutoSize = true;
-            this.cbRememberMe.Location = new System.Drawing.Point(1091, 9);
+            this.cbRememberMe.Location = new System.Drawing.Point(731, 12);
             this.cbRememberMe.Name = "cbRememberMe";
             this.cbRememberMe.Size = new System.Drawing.Size(122, 21);
             this.cbRememberMe.TabIndex = 7;
@@ -106,9 +107,9 @@
             "Unread",
             "New",
             "Unanswered"});
-            this.cbMailOptions.Location = new System.Drawing.Point(117, 531);
+            this.cbMailOptions.Location = new System.Drawing.Point(102, 531);
             this.cbMailOptions.Name = "cbMailOptions";
-            this.cbMailOptions.Size = new System.Drawing.Size(318, 24);
+            this.cbMailOptions.Size = new System.Drawing.Size(188, 24);
             this.cbMailOptions.TabIndex = 8;
             // 
             // label3
@@ -152,11 +153,22 @@
             this.colDate.Text = "Date";
             this.colDate.Width = 134;
             // 
+            // btnCompose
+            // 
+            this.btnCompose.Location = new System.Drawing.Point(1091, 5);
+            this.btnCompose.Name = "btnCompose";
+            this.btnCompose.Size = new System.Drawing.Size(122, 32);
+            this.btnCompose.TabIndex = 11;
+            this.btnCompose.Text = "Compose";
+            this.btnCompose.UseVisualStyleBackColor = true;
+            this.btnCompose.Click += new System.EventHandler(this.btnCompose_Click);
+            // 
             // MailClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1259, 572);
+            this.Controls.Add(this.btnCompose);
             this.Controls.Add(this.listMails);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbMailOptions);
@@ -167,7 +179,7 @@
             this.Controls.Add(this.Tb_Password);
             this.Controls.Add(this.Tb_UserName);
             this.Name = "MailClient";
-            this.Text = "Form1";
+            this.Text = "Saint Sender v2.0";
             this.Load += new System.EventHandler(this.MailClient_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -188,6 +200,7 @@
         private System.Windows.Forms.ColumnHeader colFrom;
         private System.Windows.Forms.ColumnHeader colSubject;
         private System.Windows.Forms.ColumnHeader colDate;
+        private System.Windows.Forms.Button btnCompose;
     }
 }
 

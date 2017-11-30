@@ -121,5 +121,18 @@ namespace SaintSenderV2
                     listMails.Sorting = SortOrder.Ascending;
             }
         }
+
+        private void btnCompose_Click(object sender, EventArgs e)
+        {
+            if (Tb_UserName.Text.Length > 0 && Tb_Password.Text.Length > 0)
+            {
+                ComposeMail newMail = new ComposeMail(Tb_UserName.Text, Tb_Password.Text);
+                newMail.Show();
+            }
+            else
+            {
+                MessageBox.Show("Please enter your e-mail address and password to send mails.");
+            }
+        }
     }
 }
