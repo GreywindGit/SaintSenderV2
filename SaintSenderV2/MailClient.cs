@@ -38,7 +38,7 @@ namespace SaintSenderV2
         private void MailClient_Load(object sender, EventArgs e)
         {
             Timer timer = new Timer();
-            timer.Interval = 300000;
+            timer.Interval = 120000;
             timer.Tick += new EventHandler(btnGetMessages_Click);
             timer.Start();
         }

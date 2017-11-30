@@ -36,9 +36,9 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(206, 387);
+            this.btnClose.Location = new System.Drawing.Point(242, 401);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(215, 23);
+            this.btnClose.Size = new System.Drawing.Size(163, 30);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -58,16 +58,15 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // MailContent
+            // ReadMail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 452);
             this.Controls.Add(this.rtbMailContent);
             this.Controls.Add(this.btnClose);
-            this.Name = "MailContent";
+            this.Name = "ReadMail";
             this.Text = "MailContent";
-            this.Load += new System.EventHandler(this.MailContent_Load);
             this.ResumeLayout(false);
 
         }

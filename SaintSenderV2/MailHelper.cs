@@ -10,13 +10,14 @@ namespace SaintSenderV2
 {
     public class MailHelper
     {
-        string hostname = "imap.gmail.com";
+        const string imapHost = "imap.gmail.com";
+        const string smtpHost = "smtp.gmail.com";
 
         public IEnumerable<MailMessage> GetMessages(String email, String password, string filterOption = "")
         {
             try
             {
-                using (ImapClient client = new ImapClient(hostname, 993, email, password, AuthMethod.Login, true))
+                using (ImapClient client = new ImapClient(imapHost, 993, email, password, AuthMethod.Login, true))
                 {
                     SearchCondition searchCondition;
                     switch (filterOption)
@@ -58,7 +59,7 @@ namespace SaintSenderV2
             mail.Body = message;
 
             SmtpClient smtpClient = new SmtpClient();
-            smtpClient.Host = "smtp.gmail.com";
+            smtpClient.Host = smtpHost;
             smtpClient.Credentials = new NetworkCredential(username, password);
             smtpClient.EnableSsl = true;
             smtpClient.Send(mail);
